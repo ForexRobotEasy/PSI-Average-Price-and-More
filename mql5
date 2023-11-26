@@ -1,0 +1,50 @@
+
+// Developer: Forex Robot Easy Team
+// Website: forexroboteasy.com
+// Program Name: PSI Average Price and More
+
+// Import necessary libraries
+#include <iostream>
+#include <vector>
+
+// Function to calculate the average price
+double calculateAveragePrice(std::vector<double> prices) {
+  double sum = 0;
+  
+  // Calculate the sum of prices
+  for (double price : prices) {
+    sum += price;
+  }
+  
+  // Calculate the average price
+  double averagePrice = sum / prices.size();
+  
+  return averagePrice;
+}
+
+// Function to calculate the break even level
+double calculateBreakEvenLevel(double currentBalance, double manualProfitLoss) {
+  double breakEvenLevel = currentBalance + manualProfitLoss;
+  return breakEvenLevel;
+}
+
+int main() {
+  // Sample prices data
+  std::vector<double> prices = {1.2, 1.4, 1.6, 1.8, 2.0};
+  
+  // Calculate the average price
+  double averagePrice = calculateAveragePrice(prices);
+  
+  // Sample account information
+  double currentBalance = 10000.0;
+  double manualProfitLoss = 500.0;
+  
+  // Calculate the break even level
+  double breakEvenLevel = calculateBreakEvenLevel(currentBalance, manualProfitLoss);
+  
+  // Display the calculated data
+  std::cout << 'Average Price: ' << averagePrice << std::endl;
+  std::cout << 'Break Even Level: ' << breakEvenLevel << std::endl;
+  
+  return 0;
+}
